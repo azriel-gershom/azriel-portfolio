@@ -1,0 +1,1426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azriel Gershom Raj - CSE(AI_ML) Portfolio</title>
+    <meta name="description"
+        content="Portfolio of Azriel Gershom Raj, a Computer Science Engineering (AI & ML) student specializing in AI, IoT, Cybersecurity, and Full Stack Development.">
+    <meta name="author" content="Azriel Gershom Raj">
+    <meta name="keywords"
+        content="Azriel Gershom Raj, AI ML student, CSE AI ML, portfolio, Python, IoT, cybersecurity, full stack, machine learning">
+    <meta property="og:title" content="Azriel Gershom Raj - Portfolio">
+    <meta property="og:description"
+        content="Explore the portfolio of Azriel Gershom Raj showcasing AI, IoT, Cybersecurity, and Full Stack projects.">
+    <meta property="og:url" content="https://your-portfolio-link.com">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Inter:wght@300;400;500;600;800;900&family=Rethink+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <!-- AMBIENT GLOW -->
+    <div class="ambient-glow-top" aria-hidden="true"></div>
+
+    <!-- ACTIVE FILTER LAYER -->
+    <div class="active-filter-layer"></div>
+
+    <!-- LANGUAGE TRANSITION OVERLAY -->
+    <div class="lang-transition-container" id="langTransition">
+        <div class="shutter shutter-top"></div>
+        <div class="transition-ui">
+            <div class="cyber-loader">
+                <div class="cyber-circle"></div>
+                <div class="cyber-arc"></div>
+                <div class="cyber-arc-inner"></div>
+            </div>
+            <div class="cyber-text">INITIALIZING...</div>
+        </div>
+        <div class="shutter shutter-bottom"></div>
+    </div>
+
+    <!-- LOADER -->
+    <div class="loader-wrap" id="loader">
+        <div class="loader-curtain curtain-top"></div>
+        <div class="loader-curtain curtain-bottom"></div>
+        <div class="loader-ui-layer">
+            <div class="loader-terminal" id="loaderTerminal"></div>
+            <div class="loader-radar-box">
+                <div class="radar-circle"></div>
+                <div class="radar-coords" id="radarCoords">SAT_LINK: SEARCHING...</div>
+                <div class="radar-status" id="radarStatus">ENCRYPTED</div>
+            </div>
+            <div class="loader-matrix" id="loaderMatrix"></div>
+            <div class="loader-scope"></div>
+            <div class="loader-freq">FREQ: <span id="loaderFreqNum">12.4</span> Hz</div>
+        </div>
+        <div class="loader-line-container">
+            <svg class="loader-svg" preserveAspectRatio="none">
+                <path class="polygraph-line" id="polygraphLine" d="M0,100"></path>
+            </svg>
+        </div>
+        <div class="loader-info mono">
+            <div class="loader-status" id="loaderStatus">SIGNAL TRACING...</div>
+            <div class="loader-counter" id="loaderCounter">00%</div>
+        </div>
+    </div>
+
+    <!-- NOISE & GRID OVERLAYS -->
+    <div class="noise-overlay"></div>
+    <div class="grid-bg"></div>
+
+    <!-- HUD CORNERS -->
+    <div class="hud-corner hud-tl">
+        <span>CAM_04 [REC]</span>
+        <span class="text-accent" style="font-size:0.5rem">SIGNAL_STRONG</span>
+    </div>
+    <div class="hud-corner hud-tr">
+        <span class="hud-time" id="hudTime">00:00:00:00</span><br>
+        <span>ISO 800</span>
+        <div class="lang-switcher-static">
+            <button class="lang-btn">EN</button>
+        </div>
+    </div>
+    <div class="hud-corner hud-bl">
+        <span class="live-dot"></span>
+        <span>LIVE FEED</span>
+    </div>
+    <div class="hud-corner hud-br">
+        <span style="font-size:0.7rem;opacity:0.6">ANALYSER_ACTIVE...</span><br>
+        <span>SYS. DIAGNOSTIC</span><br>
+        <span class="text-accent">STABLE</span>
+    </div>
+
+    <!-- CUSTOM CURSOR -->
+    <div class="cursor-main" id="cursorMain">
+        <div class="cursor-visual"></div>
+    </div>
+    <div class="cursor-data" id="cursorData"><span class="cursor-text-val">X: 0 Y: 0</span></div>
+
+    <!-- THREAD SVG -->
+    <div class="thread-container">
+        <svg id="threadSvg" width="100%" height="100%" preserveAspectRatio="none">
+            <path id="redLine" class="thread-line" d=""></path>
+            <circle id="startPin" class="pin" cx="0" cy="0" r="0"></circle>
+            <circle id="endPin" class="pin" cx="0" cy="0" r="12"></circle>
+        </svg>
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox-overlay" style="opacity:0;pointer-events:none">
+        <div class="lightbox-close mono">FERMER PREUVE [ESC]</div>
+        <div class="lightbox-nav-btn lb-prev">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square">
+                <path d="M15 18l-6-6 6-6"></path>
+            </svg>
+        </div>
+        <div class="lightbox-nav-btn lb-next">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square">
+                <path d="M9 18l6-6-6-6"></path>
+            </svg>
+        </div>
+        <div class="lightbox-content"></div>
+    </div>
+
+    <!-- NAV BUTTONS FOR PROJECT VIEWER -->
+    <div class="nav-btn prev-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square">
+            <path d="M15 18l-6-6 6-6"></path>
+        </svg>
+    </div>
+    <div class="nav-btn next-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square">
+            <path d="M9 18l6-6-6-6"></path>
+        </svg>
+    </div>
+
+    <main>
+        <!-- ===== HERO ===== -->
+        <section class="hero" id="hero">
+            <div class="spotlight-mask" id="spotlightMask"></div>
+            <div class="scanner-line"></div>
+
+            <div class="floating-container">
+                <div class="float-item f-loc mono">
+                    LAT: 48.8566 N<br>
+                    LON: 2.3522 E<br>
+                    SECURE_GRID_99
+                </div>
+                <div class="float-item f-photo">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=200" class="f-img"
+                        alt="code">
+                    <span class="mono">EVIDENCE_A.jpg</span>
+                </div>
+                <div class="float-item f-code mono">
+                    &gt;&gt; analyzing logic...<br>
+                    &gt;&gt; bug eliminated<br>
+                    &gt;&gt; system optimized
+                </div>
+            </div>
+
+            <div class="hero-content">
+                <div id="heroPinAnchor"></div>
+                <div class="hero-label mono uppercase" id="heroLabel">Top Secret // Case #2026</div>
+                <h1 class="hero-title serif">
+                    <span class="hero-layer-back" id="heroBack">AZRIEL</span><br>
+                    <span class="hero-layer-front" id="heroFront">GERSHOM</span>
+                </h1>
+                <div class="hero-subtitle" id="heroSub">
+                    AI SYSTEMS & CYBERSECURITY <span>ENTHUSIAST</span>.<br>
+                    Precision in <span>Logic</span> & Security in <span>Design</span> Intelligence in
+                    <span>Action</span>.<br>
+                    Actively Seeking Opportunities to Innovate.
+                </div>
+            </div>
+
+            <!-- HERO BLADE (scrolling ticker strip) -->
+            <div class="hero-blade-container">
+                <div class="blade-hover-effect"></div>
+                <div class="blade-scroll">
+                    <div class="blade-item"><span class="blade-icon">◆</span><span class="blade-text">REACT</span></div>
+                    <div class="blade-item"><span class="blade-icon">◆</span><span class="blade-text">NEXT.JS</span>
+                    </div>
+                    <div class="blade-item"><span class="blade-icon">◆</span><span class="blade-text">THREE.JS</span>
+                    </div>
+                    <div class="blade-item"><span class="blade-icon">◆</span><span class="blade-text">WEBGL</span></div>
+                    <div class="blade-item"><span class="blade-icon">◆</span><span class="blade-text">TYPESCRIPT</span>
+                    </div>
+                    <div class="blade-item"><span class="blade-icon">◆</span><span class="blade-text">GSAP</span></div>
+                    <div class="blade-item"><span class="blade-icon">◆</span><span class="blade-text">SYMFONY</span>
+                    </div>
+                    <div class="blade-item"><span class="blade-icon">◆</span><span class="blade-text">NODE.JS</span>
+                    </div>
+                    <div class="blade-item"><span class="blade-icon">◆</span><span class="blade-text">WORDPRESS</span>
+                    </div>
+                    <div class="blade-item"><span class="blade-icon">◆</span><span class="blade-text">TAILWIND</span>
+                    </div>
+                    <div class="blade-item"><span class="blade-icon">◆</span><span class="blade-text">FIGMA</span></div>
+                    <div class="blade-item"><span class="blade-icon">◆</span><span class="blade-text">FULLSTACK</span>
+                    </div>
+                    <!-- duplicate for seamless loop -->
+                    <div class="blade-item"><span class="blade-icon">◆</span><span class="blade-text">REACT</span></div>
+                    <div class="blade-item"><span class="blade-icon">◆</span><span class="blade-text">NEXT.JS</span>
+                    </div>
+                    <div class="blade-item"><span class="blade-icon">◆</span><span class="blade-text">THREE.JS</span>
+                    </div>
+                    <div class="blade-item"><span class="blade-icon">◆</span><span class="blade-text">WEBGL</span></div>
+                    <div class="blade-item"><span class="blade-icon">◆</span><span class="blade-text">TYPESCRIPT</span>
+                    </div>
+                    <div class="blade-item"><span class="blade-icon">◆</span><span class="blade-text">GSAP</span></div>
+                    <div class="blade-item"><span class="blade-icon">◆</span><span class="blade-text">SYMFONY</span>
+                    </div>
+                    <div class="blade-item"><span class="blade-icon">◆</span><span class="blade-text">NODE.JS</span>
+                    </div>
+                    <div class="blade-item"><span class="blade-icon">◆</span><span class="blade-text">WORDPRESS</span>
+                    </div>
+                    <div class="blade-item"><span class="blade-icon">◆</span><span class="blade-text">TAILWIND</span>
+                    </div>
+                    <div class="blade-item"><span class="blade-icon">◆</span><span class="blade-text">FIGMA</span></div>
+                    <div class="blade-item"><span class="blade-icon">◆</span><span class="blade-text">FULLSTACK</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== EVIDENCE BOARD (PROJECTS) ===== -->
+        <section class="projects-section" id="projects">
+            <div class="section-header above-thread">
+                <h2 class="serif reveal-text" style="font-size:clamp(2rem, 4vw, 3rem)">EVIDENCE BOARD</h2>
+                <div class="mono text-dim reveal-text" style="text-align:right;font-size:0.8rem">
+                    SECTOR: WEB<br>SCANNING: ACTIVE
+                </div>
+            </div>
+            <div style="width:100%;height:1px;background:#1f1f1f;margin-bottom:0" class="reveal-line"></div>
+
+            <div class="projects-controls-bar">
+                <div style="width:0;height:45px"></div>
+                <div class="view-mode-controls">
+                    <button class="view-mode-btn active" id="viewSlider" aria-label="Slider view">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="3" y="5" width="7" height="14"></rect>
+                            <rect x="14" y="5" width="7" height="14"></rect>
+                        </svg>
+                        <span>SLIDER</span>
+                    </button>
+                    <div class="view-mode-separator"></div>
+                    <button class="view-mode-btn" id="viewList" aria-label="List view">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                        <span>LIST</span>
+                    </button>
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-arrow" id="sliderPrev" aria-label="Previous project">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M15 18l-6-6 6-6"></path>
+                        </svg>
+                    </button>
+                    <div class="controls-separator"></div>
+                    <button class="slider-arrow" id="sliderNext" aria-label="Next project">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M9 18l6-6-6-6"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="mobile-3d-advisory above-thread">
+                <div class="advisory-header">
+                    <div class="advisory-dot"></div>
+                    <span>RESTRICTED_ACCESS</span>
+                </div>
+                <div class="advisory-content">
+                    <b>Plongez dans l'enquête</b> : une version 3D interactive unique vous attend sur ordinateur.
+                    Connectez-vous pour vivre l'<b>expérience complète</b>.
+                </div>
+                <div class="advisory-scanline"></div>
+            </div>
+
+            <div class="slider-container above-thread" id="sliderContainer">
+                <div class="slider-track" id="sliderTrack">
+                    <!-- 8 projects duplicated for infinite scroll -->
+                    <!-- SET 1 -->
+                    <div class="project-strip" data-project="0">
+                        <div class="project-strip-inner">
+                            <div class="corner tl"></div>
+                            <div class="corner tr"></div>
+                            <div class="corner bl"></div>
+                            <div class="corner br"></div>
+                            <div class="strip-scan-line"></div>
+                            <div class="strip-visual"><img src="https://killianherzer.com/uploads/1765236356700.webp"
+                                    class="bg-img" alt="Célia" loading="eager"></div>
+                            <div class="strip-content">
+                                <div class="strip-tech-header">
+                                    <div class="strip-barcode"></div>
+                                    <div class="strip-status"><span class="uppercase">Expérience 3D</span>
+                                        <div class="status-indicator"></div>
+                                    </div>
+                                </div>
+                                <div class="strip-details"><span class="strip-id">PREUVE #01</span>
+                                    <div class="strip-title-wrap">
+                                        <h3 class="strip-title serif">Célia</h3>
+                                    </div>
+                                    <div class="strip-access">[ CLIQUER POUR DÉCRYPTER ]</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-strip" data-project="1">
+                        <div class="project-strip-inner">
+                            <div class="corner tl"></div>
+                            <div class="corner tr"></div>
+                            <div class="corner bl"></div>
+                            <div class="corner br"></div>
+                            <div class="strip-scan-line"></div>
+                            <div class="strip-visual"><img
+                                    src="https://killianherzer.com/api/uploads/1768418982533.webp" class="bg-img"
+                                    alt="J. Pancras" loading="eager"></div>
+                            <div class="strip-content">
+                                <div class="strip-tech-header">
+                                    <div class="strip-barcode"></div>
+                                    <div class="strip-status"><span class="uppercase">Portfolio</span>
+                                        <div class="status-indicator"></div>
+                                    </div>
+                                </div>
+                                <div class="strip-details"><span class="strip-id">PREUVE #02</span>
+                                    <div class="strip-title-wrap">
+                                        <h3 class="strip-title serif">J. Pancras</h3>
+                                    </div>
+                                    <div class="strip-access">[ CLIQUER POUR DÉCRYPTER ]</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-strip" data-project="2">
+                        <div class="project-strip-inner">
+                            <div class="corner tl"></div>
+                            <div class="corner tr"></div>
+                            <div class="corner bl"></div>
+                            <div class="corner br"></div>
+                            <div class="strip-scan-line"></div>
+                            <div class="strip-visual"><img
+                                    src="https://killianherzer.com/api/uploads/1768465381784.webp" class="bg-img"
+                                    alt="Voeux 2026" loading="eager"></div>
+                            <div class="strip-content">
+                                <div class="strip-tech-header">
+                                    <div class="strip-barcode"></div>
+                                    <div class="strip-status"><span class="uppercase">Expérience 3D</span>
+                                        <div class="status-indicator"></div>
+                                    </div>
+                                </div>
+                                <div class="strip-details"><span class="strip-id">PREUVE #03</span>
+                                    <div class="strip-title-wrap">
+                                        <h3 class="strip-title serif">Voeux 2026</h3>
+                                    </div>
+                                    <div class="strip-access">[ CLIQUER POUR DÉCRYPTER ]</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-strip" data-project="3">
+                        <div class="project-strip-inner">
+                            <div class="corner tl"></div>
+                            <div class="corner tr"></div>
+                            <div class="corner bl"></div>
+                            <div class="corner br"></div>
+                            <div class="strip-scan-line"></div>
+                            <div class="strip-visual"><img
+                                    src="https://killianherzer.com/api/uploads/1770797708499.webp" class="bg-img"
+                                    alt="Ciao" loading="eager"></div>
+                            <div class="strip-content">
+                                <div class="strip-tech-header">
+                                    <div class="strip-barcode"></div>
+                                    <div class="strip-status"><span class="uppercase">Site vitrine</span>
+                                        <div class="status-indicator"></div>
+                                    </div>
+                                </div>
+                                <div class="strip-details"><span class="strip-id">PREUVE #04</span>
+                                    <div class="strip-title-wrap">
+                                        <h3 class="strip-title serif">Ciao</h3>
+                                    </div>
+                                    <div class="strip-access">[ CLIQUER POUR DÉCRYPTER ]</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-strip" data-project="4">
+                        <div class="project-strip-inner">
+                            <div class="corner tl"></div>
+                            <div class="corner tr"></div>
+                            <div class="corner bl"></div>
+                            <div class="corner br"></div>
+                            <div class="strip-scan-line"></div>
+                            <div class="strip-visual"><img src="https://killianherzer.com/uploads/1765238806060.webp"
+                                    class="bg-img" alt="H.A.N.D.S." loading="eager"></div>
+                            <div class="strip-content">
+                                <div class="strip-tech-header">
+                                    <div class="strip-barcode"></div>
+                                    <div class="strip-status"><span class="uppercase">Expérience interactive</span>
+                                        <div class="status-indicator"></div>
+                                    </div>
+                                </div>
+                                <div class="strip-details"><span class="strip-id">PREUVE #05</span>
+                                    <div class="strip-title-wrap">
+                                        <h3 class="strip-title serif">H.A.N.D.S.</h3>
+                                    </div>
+                                    <div class="strip-access">[ CLIQUER POUR DÉCRYPTER ]</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-strip" data-project="5">
+                        <div class="project-strip-inner">
+                            <div class="corner tl"></div>
+                            <div class="corner tr"></div>
+                            <div class="corner bl"></div>
+                            <div class="corner br"></div>
+                            <div class="strip-scan-line"></div>
+                            <div class="strip-visual"><img src="https://killianherzer.com/uploads/1765236775820.webp"
+                                    class="bg-img" alt="Apogée" loading="eager"></div>
+                            <div class="strip-content">
+                                <div class="strip-tech-header">
+                                    <div class="strip-barcode"></div>
+                                    <div class="strip-status"><span class="uppercase">Expérience 3D</span>
+                                        <div class="status-indicator"></div>
+                                    </div>
+                                </div>
+                                <div class="strip-details"><span class="strip-id">PREUVE #06</span>
+                                    <div class="strip-title-wrap">
+                                        <h3 class="strip-title serif">Apogée</h3>
+                                    </div>
+                                    <div class="strip-access">[ CLIQUER POUR DÉCRYPTER ]</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-strip" data-project="6">
+                        <div class="project-strip-inner">
+                            <div class="corner tl"></div>
+                            <div class="corner tr"></div>
+                            <div class="corner bl"></div>
+                            <div class="corner br"></div>
+                            <div class="strip-scan-line"></div>
+                            <div class="strip-visual"><img
+                                    src="https://killianherzer.com/api/uploads/1770235495522.webp" class="bg-img"
+                                    alt="K. Herzer" loading="eager"></div>
+                            <div class="strip-content">
+                                <div class="strip-tech-header">
+                                    <div class="strip-barcode"></div>
+                                    <div class="strip-status"><span class="uppercase">Portfolio</span>
+                                        <div class="status-indicator"></div>
+                                    </div>
+                                </div>
+                                <div class="strip-details"><span class="strip-id">PREUVE #07</span>
+                                    <div class="strip-title-wrap">
+                                        <h3 class="strip-title serif">K. Herzer</h3>
+                                    </div>
+                                    <div class="strip-access">[ CLIQUER POUR DÉCRYPTER ]</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-strip" data-project="7">
+                        <div class="project-strip-inner">
+                            <div class="corner tl"></div>
+                            <div class="corner tr"></div>
+                            <div class="corner bl"></div>
+                            <div class="corner br"></div>
+                            <div class="strip-scan-line"></div>
+                            <div class="strip-visual"><img
+                                    src="https://killianherzer.com/api/uploads/1770639961896.webp" class="bg-img"
+                                    alt="HUMAN?" loading="eager"></div>
+                            <div class="strip-content">
+                                <div class="strip-tech-header">
+                                    <div class="strip-barcode"></div>
+                                    <div class="strip-status"><span class="uppercase">Expérience interactive</span>
+                                        <div class="status-indicator"></div>
+                                    </div>
+                                </div>
+                                <div class="strip-details"><span class="strip-id">PREUVE #08</span>
+                                    <div class="strip-title-wrap">
+                                        <h3 class="strip-title serif">HUMAN?</h3>
+                                    </div>
+                                    <div class="strip-access">[ CLIQUER POUR DÉCRYPTER ]</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- SET 2 (duplicate) -->
+                    <div class="project-strip" data-project="0">
+                        <div class="project-strip-inner">
+                            <div class="corner tl"></div>
+                            <div class="corner tr"></div>
+                            <div class="corner bl"></div>
+                            <div class="corner br"></div>
+                            <div class="strip-scan-line"></div>
+                            <div class="strip-visual"><img src="https://killianherzer.com/uploads/1765236356700.webp"
+                                    class="bg-img" alt="Célia" loading="eager"></div>
+                            <div class="strip-content">
+                                <div class="strip-tech-header">
+                                    <div class="strip-barcode"></div>
+                                    <div class="strip-status"><span class="uppercase">Expérience 3D</span>
+                                        <div class="status-indicator"></div>
+                                    </div>
+                                </div>
+                                <div class="strip-details"><span class="strip-id">PREUVE #01</span>
+                                    <div class="strip-title-wrap">
+                                        <h3 class="strip-title serif">Célia</h3>
+                                    </div>
+                                    <div class="strip-access">[ CLIQUER POUR DÉCRYPTER ]</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-strip" data-project="1">
+                        <div class="project-strip-inner">
+                            <div class="corner tl"></div>
+                            <div class="corner tr"></div>
+                            <div class="corner bl"></div>
+                            <div class="corner br"></div>
+                            <div class="strip-scan-line"></div>
+                            <div class="strip-visual"><img
+                                    src="https://killianherzer.com/api/uploads/1768418982533.webp" class="bg-img"
+                                    alt="J. Pancras" loading="eager"></div>
+                            <div class="strip-content">
+                                <div class="strip-tech-header">
+                                    <div class="strip-barcode"></div>
+                                    <div class="strip-status"><span class="uppercase">Portfolio</span>
+                                        <div class="status-indicator"></div>
+                                    </div>
+                                </div>
+                                <div class="strip-details"><span class="strip-id">PREUVE #02</span>
+                                    <div class="strip-title-wrap">
+                                        <h3 class="strip-title serif">J. Pancras</h3>
+                                    </div>
+                                    <div class="strip-access">[ CLIQUER POUR DÉCRYPTER ]</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-strip" data-project="2">
+                        <div class="project-strip-inner">
+                            <div class="corner tl"></div>
+                            <div class="corner tr"></div>
+                            <div class="corner bl"></div>
+                            <div class="corner br"></div>
+                            <div class="strip-scan-line"></div>
+                            <div class="strip-visual"><img
+                                    src="https://killianherzer.com/api/uploads/1768465381784.webp" class="bg-img"
+                                    alt="Voeux 2026" loading="eager"></div>
+                            <div class="strip-content">
+                                <div class="strip-tech-header">
+                                    <div class="strip-barcode"></div>
+                                    <div class="strip-status"><span class="uppercase">Expérience 3D</span>
+                                        <div class="status-indicator"></div>
+                                    </div>
+                                </div>
+                                <div class="strip-details"><span class="strip-id">PREUVE #03</span>
+                                    <div class="strip-title-wrap">
+                                        <h3 class="strip-title serif">Voeux 2026</h3>
+                                    </div>
+                                    <div class="strip-access">[ CLIQUER POUR DÉCRYPTER ]</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-strip" data-project="3">
+                        <div class="project-strip-inner">
+                            <div class="corner tl"></div>
+                            <div class="corner tr"></div>
+                            <div class="corner bl"></div>
+                            <div class="corner br"></div>
+                            <div class="strip-scan-line"></div>
+                            <div class="strip-visual"><img
+                                    src="https://killianherzer.com/api/uploads/1770797708499.webp" class="bg-img"
+                                    alt="Ciao" loading="eager"></div>
+                            <div class="strip-content">
+                                <div class="strip-tech-header">
+                                    <div class="strip-barcode"></div>
+                                    <div class="strip-status"><span class="uppercase">Site vitrine</span>
+                                        <div class="status-indicator"></div>
+                                    </div>
+                                </div>
+                                <div class="strip-details"><span class="strip-id">PREUVE #04</span>
+                                    <div class="strip-title-wrap">
+                                        <h3 class="strip-title serif">Ciao</h3>
+                                    </div>
+                                    <div class="strip-access">[ CLIQUER POUR DÉCRYPTER ]</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-strip" data-project="4">
+                        <div class="project-strip-inner">
+                            <div class="corner tl"></div>
+                            <div class="corner tr"></div>
+                            <div class="corner bl"></div>
+                            <div class="corner br"></div>
+                            <div class="strip-scan-line"></div>
+                            <div class="strip-visual"><img src="https://killianherzer.com/uploads/1765238806060.webp"
+                                    class="bg-img" alt="H.A.N.D.S." loading="eager"></div>
+                            <div class="strip-content">
+                                <div class="strip-tech-header">
+                                    <div class="strip-barcode"></div>
+                                    <div class="strip-status"><span class="uppercase">Expérience interactive</span>
+                                        <div class="status-indicator"></div>
+                                    </div>
+                                </div>
+                                <div class="strip-details"><span class="strip-id">PREUVE #05</span>
+                                    <div class="strip-title-wrap">
+                                        <h3 class="strip-title serif">H.A.N.D.S.</h3>
+                                    </div>
+                                    <div class="strip-access">[ CLIQUER POUR DÉCRYPTER ]</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-strip" data-project="5">
+                        <div class="project-strip-inner">
+                            <div class="corner tl"></div>
+                            <div class="corner tr"></div>
+                            <div class="corner bl"></div>
+                            <div class="corner br"></div>
+                            <div class="strip-scan-line"></div>
+                            <div class="strip-visual"><img src="https://killianherzer.com/uploads/1765236775820.webp"
+                                    class="bg-img" alt="Apogée" loading="eager"></div>
+                            <div class="strip-content">
+                                <div class="strip-tech-header">
+                                    <div class="strip-barcode"></div>
+                                    <div class="strip-status"><span class="uppercase">Expérience 3D</span>
+                                        <div class="status-indicator"></div>
+                                    </div>
+                                </div>
+                                <div class="strip-details"><span class="strip-id">PREUVE #06</span>
+                                    <div class="strip-title-wrap">
+                                        <h3 class="strip-title serif">Apogée</h3>
+                                    </div>
+                                    <div class="strip-access">[ CLIQUER POUR DÉCRYPTER ]</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-strip" data-project="6">
+                        <div class="project-strip-inner">
+                            <div class="corner tl"></div>
+                            <div class="corner tr"></div>
+                            <div class="corner bl"></div>
+                            <div class="corner br"></div>
+                            <div class="strip-scan-line"></div>
+                            <div class="strip-visual"><img
+                                    src="https://killianherzer.com/api/uploads/1770235495522.webp" class="bg-img"
+                                    alt="K. Herzer" loading="eager"></div>
+                            <div class="strip-content">
+                                <div class="strip-tech-header">
+                                    <div class="strip-barcode"></div>
+                                    <div class="strip-status"><span class="uppercase">Portfolio</span>
+                                        <div class="status-indicator"></div>
+                                    </div>
+                                </div>
+                                <div class="strip-details"><span class="strip-id">PREUVE #07</span>
+                                    <div class="strip-title-wrap">
+                                        <h3 class="strip-title serif">K. Herzer</h3>
+                                    </div>
+                                    <div class="strip-access">[ CLIQUER POUR DÉCRYPTER ]</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-strip" data-project="7">
+                        <div class="project-strip-inner">
+                            <div class="corner tl"></div>
+                            <div class="corner tr"></div>
+                            <div class="corner bl"></div>
+                            <div class="corner br"></div>
+                            <div class="strip-scan-line"></div>
+                            <div class="strip-visual"><img
+                                    src="https://killianherzer.com/api/uploads/1770639961896.webp" class="bg-img"
+                                    alt="HUMAN?" loading="eager"></div>
+                            <div class="strip-content">
+                                <div class="strip-tech-header">
+                                    <div class="strip-barcode"></div>
+                                    <div class="strip-status"><span class="uppercase">Expérience interactive</span>
+                                        <div class="status-indicator"></div>
+                                    </div>
+                                </div>
+                                <div class="strip-details"><span class="strip-id">PREUVE #08</span>
+                                    <div class="strip-title-wrap">
+                                        <h3 class="strip-title serif">HUMAN?</h3>
+                                    </div>
+                                    <div class="strip-access">[ CLIQUER POUR DÉCRYPTER ]</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- SET 3 (duplicate) -->
+                    <div class="project-strip" data-project="0">
+                        <div class="project-strip-inner">
+                            <div class="corner tl"></div>
+                            <div class="corner tr"></div>
+                            <div class="corner bl"></div>
+                            <div class="corner br"></div>
+                            <div class="strip-scan-line"></div>
+                            <div class="strip-visual"><img src="https://killianherzer.com/uploads/1765236356700.webp"
+                                    class="bg-img" alt="Célia" loading="eager"></div>
+                            <div class="strip-content">
+                                <div class="strip-tech-header">
+                                    <div class="strip-barcode"></div>
+                                    <div class="strip-status"><span class="uppercase">Expérience 3D</span>
+                                        <div class="status-indicator"></div>
+                                    </div>
+                                </div>
+                                <div class="strip-details"><span class="strip-id">PREUVE #01</span>
+                                    <div class="strip-title-wrap">
+                                        <h3 class="strip-title serif">Célia</h3>
+                                    </div>
+                                    <div class="strip-access">[ CLIQUER POUR DÉCRYPTER ]</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-strip" data-project="1">
+                        <div class="project-strip-inner">
+                            <div class="corner tl"></div>
+                            <div class="corner tr"></div>
+                            <div class="corner bl"></div>
+                            <div class="corner br"></div>
+                            <div class="strip-scan-line"></div>
+                            <div class="strip-visual"><img
+                                    src="https://killianherzer.com/api/uploads/1768418982533.webp" class="bg-img"
+                                    alt="J. Pancras" loading="eager"></div>
+                            <div class="strip-content">
+                                <div class="strip-tech-header">
+                                    <div class="strip-barcode"></div>
+                                    <div class="strip-status"><span class="uppercase">Portfolio</span>
+                                        <div class="status-indicator"></div>
+                                    </div>
+                                </div>
+                                <div class="strip-details"><span class="strip-id">PREUVE #02</span>
+                                    <div class="strip-title-wrap">
+                                        <h3 class="strip-title serif">J. Pancras</h3>
+                                    </div>
+                                    <div class="strip-access">[ CLIQUER POUR DÉCRYPTER ]</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-strip" data-project="2">
+                        <div class="project-strip-inner">
+                            <div class="corner tl"></div>
+                            <div class="corner tr"></div>
+                            <div class="corner bl"></div>
+                            <div class="corner br"></div>
+                            <div class="strip-scan-line"></div>
+                            <div class="strip-visual"><img
+                                    src="https://killianherzer.com/api/uploads/1768465381784.webp" class="bg-img"
+                                    alt="Voeux 2026" loading="eager"></div>
+                            <div class="strip-content">
+                                <div class="strip-tech-header">
+                                    <div class="strip-barcode"></div>
+                                    <div class="strip-status"><span class="uppercase">Expérience 3D</span>
+                                        <div class="status-indicator"></div>
+                                    </div>
+                                </div>
+                                <div class="strip-details"><span class="strip-id">PREUVE #03</span>
+                                    <div class="strip-title-wrap">
+                                        <h3 class="strip-title serif">Voeux 2026</h3>
+                                    </div>
+                                    <div class="strip-access">[ CLIQUER POUR DÉCRYPTER ]</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-strip" data-project="3">
+                        <div class="project-strip-inner">
+                            <div class="corner tl"></div>
+                            <div class="corner tr"></div>
+                            <div class="corner bl"></div>
+                            <div class="corner br"></div>
+                            <div class="strip-scan-line"></div>
+                            <div class="strip-visual"><img
+                                    src="https://killianherzer.com/api/uploads/1770797708499.webp" class="bg-img"
+                                    alt="Ciao" loading="eager"></div>
+                            <div class="strip-content">
+                                <div class="strip-tech-header">
+                                    <div class="strip-barcode"></div>
+                                    <div class="strip-status"><span class="uppercase">Site vitrine</span>
+                                        <div class="status-indicator"></div>
+                                    </div>
+                                </div>
+                                <div class="strip-details"><span class="strip-id">PREUVE #04</span>
+                                    <div class="strip-title-wrap">
+                                        <h3 class="strip-title serif">Ciao</h3>
+                                    </div>
+                                    <div class="strip-access">[ CLIQUER POUR DÉCRYPTER ]</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-strip" data-project="4">
+                        <div class="project-strip-inner">
+                            <div class="corner tl"></div>
+                            <div class="corner tr"></div>
+                            <div class="corner bl"></div>
+                            <div class="corner br"></div>
+                            <div class="strip-scan-line"></div>
+                            <div class="strip-visual"><img src="https://killianherzer.com/uploads/1765238806060.webp"
+                                    class="bg-img" alt="H.A.N.D.S." loading="eager"></div>
+                            <div class="strip-content">
+                                <div class="strip-tech-header">
+                                    <div class="strip-barcode"></div>
+                                    <div class="strip-status"><span class="uppercase">Expérience interactive</span>
+                                        <div class="status-indicator"></div>
+                                    </div>
+                                </div>
+                                <div class="strip-details"><span class="strip-id">PREUVE #05</span>
+                                    <div class="strip-title-wrap">
+                                        <h3 class="strip-title serif">H.A.N.D.S.</h3>
+                                    </div>
+                                    <div class="strip-access">[ CLIQUER POUR DÉCRYPTER ]</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-strip" data-project="5">
+                        <div class="project-strip-inner">
+                            <div class="corner tl"></div>
+                            <div class="corner tr"></div>
+                            <div class="corner bl"></div>
+                            <div class="corner br"></div>
+                            <div class="strip-scan-line"></div>
+                            <div class="strip-visual"><img src="https://killianherzer.com/uploads/1765236775820.webp"
+                                    class="bg-img" alt="Apogée" loading="eager"></div>
+                            <div class="strip-content">
+                                <div class="strip-tech-header">
+                                    <div class="strip-barcode"></div>
+                                    <div class="strip-status"><span class="uppercase">Expérience 3D</span>
+                                        <div class="status-indicator"></div>
+                                    </div>
+                                </div>
+                                <div class="strip-details"><span class="strip-id">PREUVE #06</span>
+                                    <div class="strip-title-wrap">
+                                        <h3 class="strip-title serif">Apogée</h3>
+                                    </div>
+                                    <div class="strip-access">[ CLIQUER POUR DÉCRYPTER ]</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-strip" data-project="6">
+                        <div class="project-strip-inner">
+                            <div class="corner tl"></div>
+                            <div class="corner tr"></div>
+                            <div class="corner bl"></div>
+                            <div class="corner br"></div>
+                            <div class="strip-scan-line"></div>
+                            <div class="strip-visual"><img
+                                    src="https://killianherzer.com/api/uploads/1770235495522.webp" class="bg-img"
+                                    alt="K. Herzer" loading="eager"></div>
+                            <div class="strip-content">
+                                <div class="strip-tech-header">
+                                    <div class="strip-barcode"></div>
+                                    <div class="strip-status"><span class="uppercase">Portfolio</span>
+                                        <div class="status-indicator"></div>
+                                    </div>
+                                </div>
+                                <div class="strip-details"><span class="strip-id">PREUVE #07</span>
+                                    <div class="strip-title-wrap">
+                                        <h3 class="strip-title serif">K. Herzer</h3>
+                                    </div>
+                                    <div class="strip-access">[ CLIQUER POUR DÉCRYPTER ]</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-strip" data-project="7">
+                        <div class="project-strip-inner">
+                            <div class="corner tl"></div>
+                            <div class="corner tr"></div>
+                            <div class="corner bl"></div>
+                            <div class="corner br"></div>
+                            <div class="strip-scan-line"></div>
+                            <div class="strip-visual"><img
+                                    src="https://killianherzer.com/api/uploads/1770639961896.webp" class="bg-img"
+                                    alt="HUMAN?" loading="eager"></div>
+                            <div class="strip-content">
+                                <div class="strip-tech-header">
+                                    <div class="strip-barcode"></div>
+                                    <div class="strip-status"><span class="uppercase">Expérience interactive</span>
+                                        <div class="status-indicator"></div>
+                                    </div>
+                                </div>
+                                <div class="strip-details"><span class="strip-id">PREUVE #08</span>
+                                    <div class="strip-title-wrap">
+                                        <h3 class="strip-title serif">HUMAN?</h3>
+                                    </div>
+                                    <div class="strip-access">[ CLIQUER POUR DÉCRYPTER ]</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-badge">
+                    <div class="badge-barcode"></div>
+                    <div class="badge-content">
+                        <span class="badge-label">EVIDENCE ARCHIVE</span>
+                        <span class="badge-count">08 FILES</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LIST VIEW (hidden by default) -->
+            <div class="projects-list above-thread view-hidden" id="projectsList">
+                <div class="project-list-item" data-project="0">
+                    <div class="list-item-bg"><img src="https://killianherzer.com/uploads/1765236356700.webp"
+                            class="list-item-bg-img" alt="Célia" loading="eager"></div>
+                    <div class="list-item-overlay"></div>
+                    <div class="list-item-content">
+                        <div class="list-item-left">
+                            <div class="list-item-barcode"></div>
+                            <div class="list-item-info"><span class="list-item-id mono">PREUVE #01</span>
+                                <h3 class="list-item-title serif">Célia</h3>
+                            </div>
+                        </div>
+                        <div class="list-item-center"><span class="list-item-type mono">Expérience 3D</span></div>
+                        <div class="list-item-right">
+                            <div class="list-item-access mono"><span>[ CLIQUER POUR DÉCRYPTER ]</span><svg width="16"
+                                    height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                                </svg></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-list-item" data-project="1">
+                    <div class="list-item-bg"><img src="https://killianherzer.com/api/uploads/1768418982533.webp"
+                            class="list-item-bg-img" alt="J. Pancras" loading="eager"></div>
+                    <div class="list-item-overlay"></div>
+                    <div class="list-item-content">
+                        <div class="list-item-left">
+                            <div class="list-item-barcode"></div>
+                            <div class="list-item-info"><span class="list-item-id mono">PREUVE #02</span>
+                                <h3 class="list-item-title serif">J. Pancras</h3>
+                            </div>
+                        </div>
+                        <div class="list-item-center"><span class="list-item-type mono">Portfolio</span></div>
+                        <div class="list-item-right">
+                            <div class="list-item-access mono"><span>[ CLIQUER POUR DÉCRYPTER ]</span><svg width="16"
+                                    height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                                </svg></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-list-item" data-project="2">
+                    <div class="list-item-bg"><img src="https://killianherzer.com/api/uploads/1768465381784.webp"
+                            class="list-item-bg-img" alt="Voeux 2026" loading="eager"></div>
+                    <div class="list-item-overlay"></div>
+                    <div class="list-item-content">
+                        <div class="list-item-left">
+                            <div class="list-item-barcode"></div>
+                            <div class="list-item-info"><span class="list-item-id mono">PREUVE #03</span>
+                                <h3 class="list-item-title serif">Voeux 2026</h3>
+                            </div>
+                        </div>
+                        <div class="list-item-center"><span class="list-item-type mono">Expérience 3D</span></div>
+                        <div class="list-item-right">
+                            <div class="list-item-access mono"><span>[ CLIQUER POUR DÉCRYPTER ]</span><svg width="16"
+                                    height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                                </svg></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-list-item" data-project="3">
+                    <div class="list-item-bg"><img src="https://killianherzer.com/api/uploads/1770797708499.webp"
+                            class="list-item-bg-img" alt="Ciao" loading="eager"></div>
+                    <div class="list-item-overlay"></div>
+                    <div class="list-item-content">
+                        <div class="list-item-left">
+                            <div class="list-item-barcode"></div>
+                            <div class="list-item-info"><span class="list-item-id mono">PREUVE #04</span>
+                                <h3 class="list-item-title serif">Ciao</h3>
+                            </div>
+                        </div>
+                        <div class="list-item-center"><span class="list-item-type mono">Site vitrine</span></div>
+                        <div class="list-item-right">
+                            <div class="list-item-access mono"><span>[ CLIQUER POUR DÉCRYPTER ]</span><svg width="16"
+                                    height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                                </svg></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-list-item" data-project="4">
+                    <div class="list-item-bg"><img src="https://killianherzer.com/uploads/1765238806060.webp"
+                            class="list-item-bg-img" alt="H.A.N.D.S." loading="eager"></div>
+                    <div class="list-item-overlay"></div>
+                    <div class="list-item-content">
+                        <div class="list-item-left">
+                            <div class="list-item-barcode"></div>
+                            <div class="list-item-info"><span class="list-item-id mono">PREUVE #05</span>
+                                <h3 class="list-item-title serif">H.A.N.D.S.</h3>
+                            </div>
+                        </div>
+                        <div class="list-item-center"><span class="list-item-type mono">Expérience interactive</span>
+                        </div>
+                        <div class="list-item-right">
+                            <div class="list-item-access mono"><span>[ CLIQUER POUR DÉCRYPTER ]</span><svg width="16"
+                                    height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                                </svg></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-list-item" data-project="5">
+                    <div class="list-item-bg"><img src="https://killianherzer.com/uploads/1765236775820.webp"
+                            class="list-item-bg-img" alt="Apogée" loading="eager"></div>
+                    <div class="list-item-overlay"></div>
+                    <div class="list-item-content">
+                        <div class="list-item-left">
+                            <div class="list-item-barcode"></div>
+                            <div class="list-item-info"><span class="list-item-id mono">PREUVE #06</span>
+                                <h3 class="list-item-title serif">Apogée</h3>
+                            </div>
+                        </div>
+                        <div class="list-item-center"><span class="list-item-type mono">Expérience 3D</span></div>
+                        <div class="list-item-right">
+                            <div class="list-item-access mono"><span>[ CLIQUER POUR DÉCRYPTER ]</span><svg width="16"
+                                    height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                                </svg></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-list-item" data-project="6">
+                    <div class="list-item-bg"><img src="https://killianherzer.com/api/uploads/1770235495522.webp"
+                            class="list-item-bg-img" alt="K. Herzer" loading="eager"></div>
+                    <div class="list-item-overlay"></div>
+                    <div class="list-item-content">
+                        <div class="list-item-left">
+                            <div class="list-item-barcode"></div>
+                            <div class="list-item-info"><span class="list-item-id mono">PREUVE #07</span>
+                                <h3 class="list-item-title serif">K. Herzer</h3>
+                            </div>
+                        </div>
+                        <div class="list-item-center"><span class="list-item-type mono">Portfolio</span></div>
+                        <div class="list-item-right">
+                            <div class="list-item-access mono"><span>[ CLIQUER POUR DÉCRYPTER ]</span><svg width="16"
+                                    height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                                </svg></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-list-item" data-project="7">
+                    <div class="list-item-bg"><img src="https://killianherzer.com/api/uploads/1770639961896.webp"
+                            class="list-item-bg-img" alt="HUMAN?" loading="eager"></div>
+                    <div class="list-item-overlay"></div>
+                    <div class="list-item-content">
+                        <div class="list-item-left">
+                            <div class="list-item-barcode"></div>
+                            <div class="list-item-info"><span class="list-item-id mono">PREUVE #08</span>
+                                <h3 class="list-item-title serif">HUMAN?</h3>
+                            </div>
+                        </div>
+                        <div class="list-item-center"><span class="list-item-type mono">Expérience interactive</span>
+                        </div>
+                        <div class="list-item-right">
+                            <div class="list-item-access mono"><span>[ CLIQUER POUR DÉCRYPTER ]</span><svg width="16"
+                                    height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                                </svg></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== ABOUT / SUBJECT PROFILE ===== -->
+        <section class="about-section" id="about">
+            <div class="section-header behind-thread" style="padding:0 0 2rem 0;width:100%;border:none">
+                <h2 class="serif" style="font-size:clamp(2rem, 3vw, 2.5rem)">SUBJECT PROFILE</h2>
+                <div class="mono text-dim" style="font-size:0.8rem">
+                    CASE FILE: KH-03<br>STATUS: GRADUATING
+                </div>
+            </div>
+
+            <div class="profiler-container">
+                <!-- LEFT: IDENTITY -->
+                <div class="profiler-module col-identity">
+                    <div class="identity-name mono">Azriel Gershom Raj</div>
+                    <div class="fingerprint-scanner">
+                        <div class="scanner-frame-profile">
+                            <div class="scanner-grid-overlay-profile"></div>
+                            <div class="face-target-box-profile">
+                                <div class="ft-corner-profile ft-tl"></div>
+                                <div class="ft-corner-profile ft-tr"></div>
+                                <div class="ft-corner-profile ft-bl"></div>
+                                <div class="ft-corner-profile ft-br"></div>
+                            </div>
+                            <img src="azz.png" alt="Identity" class="photo-img-profile">
+                            <div class="scan-data-profile data-top-profile">REC_ACTIVE [●]</div>
+                            <div class="scan-data-profile data-bot-profile">ISO_FACE_ID: 99.9%</div>
+                        </div>
+                        <div class="scan-beam"></div>
+                    </div>
+                    <div class="id-data-grid">
+                        <div><span class="mono">CLASS:</span><span class="id-val">CSE_(AI_ML)_STUDENT</span></div>
+                        <div><span class="mono">XP_LEVEL:</span><span class="id-val">MASTER_DEGREE</span></div>
+                        <div><span class="mono">LANG_1:</span><span class="id-val">FR (Natif)</span></div>
+                        <div><span class="mono">LANG_2:</span><span class="id-val">EN (Courant)</span></div>
+                        <div class="status-wrapper">
+                            <div class="status-bg-scroll"></div>
+                            <div class="status-header"><span class="status-dot"></span> SYSTEM_ALERT</div>
+                            <div class="status-main">OPEN TO WORK</div>
+                            <div class="status-footer">
+                                <span>// CONTRACTS: ENABLED</span>
+                                <span>[REMOTE_READY]</span>
+                            </div>
+                        </div>
+                        <div><span class="mono">INTEREST:</span><span class="id-val"> • Internships<br>
+                                • Freelance<br>
+                                • Collaborations</span></div>
+                    </div>
+                </div>
+
+                <!-- CENTER: ANALYSIS -->
+                <div class="profiler-module col-behavior">
+                    <div class="analysis-header">
+                        <span>COMPETENCE_ANALYSIS_REPORT</span>
+                        <span>[READ_ONLY]</span>
+                    </div>
+                    <div class="psych-report">
+                        <p style="font-size:1.1rem;line-height:1.6;margin-bottom:3rem">
+                            CSE (AI & ML) student driven by innovation, <span
+                                class="evidence-highlight">problem-solving,</span> and <span
+                                class="evidence-highlight">intelligent system design</span>.<br>I don’t just build
+                            projects
+                            — I create solutions that
+                            combine logic, data, and real-world impact.
+                        </p>
+                        <div class="dossier-history">
+                            <div class="history-block">
+                                <h4 class="mono">// ACADEMIC_LOG</h4>
+                                <div class="history-item">
+                                    <div class="history-header">
+                                        <span class="history-date">[KARUNYA INSTITUTE OF TECHNOLOGY AND SCIENCES]</span>
+                                        <span class="history-period">2025-2029</span>
+                                    </div>
+                                    <div>B.Tech – Computer Science Engineering (AI & Machine Learning)</div>
+                                </div>
+                                <div class="history-item">
+                                    <div class="history-header">
+                                        <span class="history-date">[MY SCHOOL]</span>
+                                        <span class="history-period">2022-2024</span>
+                                    </div>
+                                    <div> KV Matric Higher Secondary School</div>
+                                </div>
+                            </div>
+                            <div class="history-block">
+                                <h4 class="mono">// FIELD_OPERATIONS [EXPÉRIENCE]</h4>
+                                <div class="history-item">
+                                    <div class="history-header">
+                                        <span class="history-date">[STUDENT DEVELOPER]</span>
+                                        <span class="history-period">2025-2026</span>
+                                    </div>
+                                    <div> • AI & ML based problem solving<br>
+                                        • Cloud Computing (AWS / basics)<br>
+                                        • Web-based application building<br></div>
+                                </div>
+                                <div class="history-item">
+                                    <div class="history-header">
+                                        <span class="history-date">[MICRO PROJECTS]</span>
+                                        <span class="history-period">2025-2026</span>
+                                    </div>
+                                    <div> • Intelligent Keep-Alive Management for Battery IoT Devices<br>
+                                        • Cache Memory Analyzer (Interactive Visualization)</div>
+                                </div>
+                                <div class="history-item">
+                                    <div class="history-header">
+                                        <span class="history-date">[CERTIFICATIONS]</span>
+                                        <span class="history-period">2025-2026</span>
+                                    </div>
+                                    <div>ORACLE CLOUD INFRASTRUCTURE FOUNDATIONS ASSOCIATE<br>
+                                        RED HAT SYSTEM ADMINISTRATION I (RH124)<br>
+                                        INTRODUCTION TO IoT & DIGITAL TRANSFORMATION
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT: CAPABILITIES -->
+                <div class="col-capabilities-wrapper">
+                    <div class="profiler-module cap-top">
+                        <div class="mono" style="font-size:0.7rem;color:#666;margin-bottom:1rem;text-align:right">
+                            EQUIPMENT_INVENTORY</div>
+                        <div class="tech-category">
+                            <span class="cat-title text-accent">HARD SKILLS</span>
+                            <div class="chips-grid">
+                                <div class="tech-chip">Python</div>
+                                <div class="tech-chip">HTML / CSS</div>
+                                <div class="tech-chip">Java</div>
+                                <div class="tech-chip">JavaScript</div>
+                                <div class="tech-chip text-accent">Git & GitHub</div>
+                                <div class="tech-chip">SQL</div>
+                                <div class="tech-chip">IoT Development</div>
+                                <div class="tech-chip">MatLab</div>
+                                <div class="tech-chip">Node.js</div>
+                                <div class="tech-chip">GSAP</div>
+                                <div class="tech-chip">Bootstrap</div>
+                                <div class="tech-chip">ML Basics</div>
+                                <div class="tech-chip">C / C++</div>
+                            </div>
+                        </div>
+                        <div class="tech-category">
+                            <span class="cat-title">SOFT SKILLS</span>
+                            <div class="chips-grid">
+                                <div class="tech-chip">Problem Solving</div>
+                                <div class="tech-chip">Critical Thinking</div>
+                                <div class="tech-chip">Curiosity</div>
+                                <div class="tech-chip">Self Learning</div>
+                                <div class="tech-chip">Creativity</div>
+                                <div class="tech-chip">Collaboration</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cap-bottom-stage">
+                        <div class="profiler-module cap-bg no-scan"></div>
+                        <div class="threat-level cap-content">
+                            <div class="alert-box">
+                                <svg class="alert-svg" viewBox="0 0 100 100">
+                                    <path class="triangle-bg" d="M50,15 L90,85 L10,85 Z"></path>
+                                    <path class="triangle-line" d="M50,15 L90,85 L10,85 Z"></path>
+                                    <rect class="alert-mark-bar" x="48" y="35" width="4" height="25"></rect>
+                                    <circle class="alert-mark-dot" cx="50" cy="72" r="3"></circle>
+                                </svg>
+                                <div class="alert-ripple"></div>
+                            </div>
+                            <div class="mono text-accent" style="font-size:0.8rem;letter-spacing:2px">DANGER: HIGH</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== IMMERSIVE CTA ===== -->
+        <section class="immersive-cta-section">
+            <div class="immersive-cta-inner">
+                <div class="immersive-cta-corner icta-tl"></div>
+                <div class="immersive-cta-corner icta-tr"></div>
+                <div class="immersive-cta-corner icta-bl"></div>
+                <div class="immersive-cta-corner icta-br"></div>
+                <div class="immersive-cta-scanline"></div>
+                <div class="immersive-cta-grid"></div>
+                <div class="immersive-cta-content">
+                    <div class="immersive-cta-visual">
+                        <div class="icta-cube-container">
+                            <div class="icta-cube">
+                                <div class="icta-face icta-front"></div>
+                                <div class="icta-face icta-back"></div>
+                                <div class="icta-face icta-left"></div>
+                                <div class="icta-face icta-right"></div>
+                                <div class="icta-face icta-top"></div>
+                                <div class="icta-face icta-bottom"></div>
+                            </div>
+                        </div>
+                        <div class="icta-orbit-ring"></div>
+                        <div class="icta-orbit-ring icta-orbit-2"></div>
+                    </div>
+                    <div class="immersive-cta-text">
+                        <div class="icta-label mono">PROTOCOL_ALT // IMMERSIVE_MODE</div>
+                        <h3 class="icta-title serif">Ce portfolio existe aussi en 3D</h3>
+                        <p class="icta-desc">Explorez une version interactive et immersive de mon univers. Navigation
+                            spatiale, environnement 3D temps réel et expérience sensorielle complète.</p>
+                        <a href="https://3d.killianherzer.com/" class="icta-btn mono" target="_blank"
+                            rel="noopener noreferrer">
+                            <span class="icta-btn-icon">▷</span>LANCER LA VERSION 3D<span
+                                class="icta-btn-arrow">→</span>
+                        </a>
+                    </div>
+                    <div class="immersive-cta-meta mono">
+                        <div class="icta-meta-item"><span class="icta-meta-label">STATUS</span><span
+                                class="icta-meta-val"><span class="icta-live-dot"></span>ONLINE</span></div>
+                        <div class="icta-meta-item"><span class="icta-meta-label">ENGINE</span><span
+                                class="icta-meta-val">THREE.JS</span></div>
+                        <div class="icta-meta-item"><span class="icta-meta-label">RENDER</span><span
+                                class="icta-meta-val">WEBGL 2.0</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CONTACT ===== -->
+        <section class="contact-section" id="contact">
+            <div class="ambient-glow-bottom" aria-hidden="true"></div>
+            <div class="bg-marquee serif">INITIATE PROTOCOL // START TRANSMISSION //</div>
+            <div class="contact-terminal behind-thread" id="contactTerminal">
+                <div class="mono text-accent" style="font-size:0.9rem;margin-bottom:1rem">
+                    <span class="status-light"></span> CHANNEL OPEN
+                </div>
+                <h2 class="contact-title serif" style="color:#fff">
+                    What if we build something impactful<br><em style="color:#ff2a2a;">Together</em> ?
+                </h2>
+                <div class="mono text-accent" style="font-size:1rem;margin:2rem 0;letter-spacing:1px">
+                    azrielgershom@gmail.com</div>
+                <a href="mailto:azrielgershom@gmail.com" class="contact-btn mono" id="contactBtn">LETS BUILD</a>
+                <div class="social-links-row"
+                    style="margin-top:3rem;display:flex;gap:2.5rem;justify-content:center;align-items:center">
+                    <a href="https://github.com/azriel-gershom" target="_blank" rel="noopener noreferrer"
+                        class="social-link mono" style="color:#888;font-size:0.9rem;text-decoration:none">
+                        <span class="bracket-left">[</span> GITHUB <span class="bracket-right">]</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/azrielgershom/" target="_blank" rel="noopener noreferrer"
+                        class="social-link mono" style="color:#888;font-size:0.9rem;text-decoration:none">
+                        <span class="bracket-left">[</span> LINKEDIN <span class="bracket-right">]</span>
+                    </a>
+                </div>
+                <div class="mono" style="margin-top:4rem;color:#444;font-size:0.8rem">
+                    SECURE CONNECTION ESTABLISHED<br>
+                    <span>&copy; 2026 AZRIEL GERSHOM</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- PROJECT VIEWER -->
+    <div class="project-viewer" id="projectViewer">
+        <div class="controls-header">
+            <div class="close-btn mono" id="closeViewer">FERMER TERMINAL [ESC]</div>
+        </div>
+        <div class="viewer-slide-wrapper">
+            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="viewer-bg"
+                id="viewerBg" alt="bg">
+            <div class="grid-bg" style="opacity:0.3;z-index:1"></div>
+            <div class="project-details-overlay">
+                <div class="scroll-content-inner">
+                    <div class="interface-header anim-item">
+                        <div>
+                            <div class="mono" style="color:var(--accent-red);margin-bottom:10px">TOP SECRET // DECRYPTED
+                            </div>
+                            <div class="mono text-accent overlay-id" style="font-size:0.9rem">PREUVE #XX</div>
+                        </div>
+                        <div class="mono overlay-type uppercase">Type</div>
+                    </div>
+                    <div class="interface-grid">
+                        <div class="data-sidebar anim-item">
+                            <div class="mono"
+                                style="color:var(--accent-red);border-bottom:1px solid #444;padding-bottom:10px">
+                                MÉTADONNÉES</div>
+                            <div class="data-point mono"><label>ANNÉE</label> <span class="overlay-date">2024</span>
+                            </div>
+                            <div class="data-point mono"><label>CONTEXTE</label> <span class="overlay-cadre">Pro</span>
+                            </div>
+                            <div class="data-point mono container-ecole-client"><label
+                                    class="label-ecole-client">CLIENT</label> <span
+                                    class="overlay-ecole-client">Values</span></div>
+                            <div class="data-point mono"><label>DURÉE</label> <span class="overlay-duree">1mo</span>
+                            </div>
+                            <div class="mono" style="margin-top:1rem">
+                                <label style="color:#666;font-size:0.8rem">TAGS:</label>
+                                <div class="overlay-tags chips-grid" style="margin-top:10px"></div>
+                            </div>
+                            <div class="mono" style="margin-top:1rem">
+                                <label style="color:#666;font-size:0.8rem">STACKS:</label>
+                                <div class="overlay-stack chips-grid" style="margin-top:10px"></div>
+                            </div>
+                            <a href="#" target="_blank" class="project-link full-width overlay-link mono">ACCÉDER AU
+                                SITE</a>
+                        </div>
+                        <div class="data-main anim-item">
+                            <div class="terminal-block">
+                                <h3 class="mono">RAPPORT_MISSION</h3>
+                                <p class="overlay-desc">Description</p>
+                            </div>
+                            <div class="img-display" data-img-type="main"><img
+                                    src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                    class="overlay-img-1 expandable-img" alt="Evidence Main"></div>
+                            <div class="terminal-block">
+                                <h3 class="mono">ANALYSE_TECHNIQUE</h3>
+                                <p class="overlay-context">Context</p>
+                            </div>
+                            <div class="img-display" data-img-type="sec"><img
+                                    src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                    class="overlay-img-2 expandable-img" alt="Evidence Secondary"></div>
+                            <div class="terminal-block">
+                                <h3 class="mono">MY_INTERVENTION</h3>
+                                <p class="overlay-role">Intervention</p>
+                            </div>
+                            <div class="terminal-block">
+                                <h3 class="mono">CRÉDITS :</h3>
+                                <ul class="credits-list overlay-credits-list"></ul>
+                            </div>
+                            <div class="terminal-block">
+                                <h3 class="mono">USEFUL_LINKS</h3>
+                                <ul class="useful-links-list overlay-useful-links"></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="terminal-block container-additional-evidence" style="margin-top:4rem">
+                        <h3 class="mono">LOG_PREUVES_ADDITIONNELLES</h3>
+                        <div class="evidence-grid"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
